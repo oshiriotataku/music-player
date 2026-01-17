@@ -267,8 +267,6 @@ function playNextTrack() {
   loadTrack(currentTrackIndex);
 }
 
-
-
 // repeat
 repeat.addEventListener("click", () => {
   repeat.classList.toggle("active");
@@ -363,4 +361,3 @@ prevBtn.addEventListener("click", () => {
   }
   loadTrack(currentTrackIndex);
 });
-
