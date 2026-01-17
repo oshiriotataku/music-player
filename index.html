@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="songs_btn active">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M18 20C19.6569 20 21 18.6569 21 17C21 15.3431 19.6569 14 18 14C16.3431 14 15 15.3431 15 17C15 18.6569 16.3431 20 18 20Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M20.5 6.60938L9.5 9.35938V6.39062L20.5 3.64062V6.60938Z" />
+            <path
+              d="M9 18V10M9 10V6L21 3V7M9 10L21 7M21 17V7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Songs
+        </button>
+        <button class="favorites_btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 4.5C14.9 4.5 13.05 5.55 12 7.2C10.95 5.55 9.1 4.5 7 4.5C3.7 4.5 1 7.2 1 10.5C1 16.45 12 22.5 12 22.5C12 22.5 23 16.5 23 10.5C23 7.2 20.3 4.5 17 4.5Z" />
+          </svg>
+          Favorites
+        </button>
+      </div>
+      <div class="list_wrap">
+        <div class="list_songs" id="songs"></div>
+        <div class="list_favorites" id="favorites"></div>
+      </div>
+      <div class="miniplayer">
+        <div class="miniplayer_info">
+          <img class="miniplayer_img" src="covers/howl.webp" alt="" />
+          <div class="miniplayer_info_text">
+            <div class="miniplayer_info_title">Howl's moving castle</div>
+            <div class="miniplayer_info_author">Joe Hisaishi</div>
+          </div>
+        </div>
+        <button class="miniplayer_btn">
+          <svg
+            class="miniplayer_play_btn active"
+            width="23"
+            height="27"
+            viewBox="0 0 23 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.8604 11.4898C23.1637 12.2651 23.1637 14.1523 21.8604 14.9276L3.02247 26.1332C1.68931 26.9263 -1.20116e-06 25.9655 -1.13335e-06 24.4143L-1.53723e-07 2.00305C-8.59184e-08 0.451851 1.68931 -0.508857 3.02247 0.284169L21.8604 11.4898Z"
+              fill="black" />
+          </svg>
+          <svg
+            class="miniplayer_pause_btn"
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="4" width="8" height="26" rx="2" fill="black" />
+            <rect x="20" y="4" width="8" height="26" rx="2" fill="black" />
+          </svg>
+        </button>
+      </div>
+      <div class="player">
+        <div class="player_header">
+          <button class="player_header_btn">
+            <svg
+              width="24"
+              height="12"
+              viewBox="0 0 24 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_149)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 8.657L19.071 1.586L20.485 3L12.707 10.778C12.5195 10.9655 12.2652 11.0708 12 11.0708C11.7348 11.0708 11.4805 10.9655 11.293 10.778L3.51501 3L4.92901 1.586L12 8.657Z"
+                  fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_149">
+                  <rect
+                    width="12"
+                    height="24"
+                    fill="white"
+                    transform="matrix(0 -1 1 0 0 12)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <div class="player_header-title">Now playing</div>
+        </div>
+        <div class="player_info">
+          <img class="player_img" src="covers/howl.webp" alt="" />
+          <div class="player_info-text">
+            <div class="player_info-title">Howl's moving castle</div>
+            <div class="player_info-author">Joe Hisaishi</div>
+          </div>
+        </div>
+        <div class="player_controls">
+          <audio class="audio" src="music/howl.mp3"></audio>
+          <div class="progress">
+            <input type="range" id="progress" min="0" value="0" step="0.1"/>
+            <div class="player_time">
+              <div class="player_current-time">0:00</div>
+              <div class="player_total-time">0:00</div>
+            </div>
+          </div>
+          <div class="player_controls-options">
+            <button class="random">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.9281 4.61248C22.4906 4.37811 23.1328 4.50936 23.5641 4.93592L26.5641 7.93592C26.8453 8.21717 27.0047 8.59686 27.0047 8.9953C27.0047 9.39373 26.8453 9.77342 26.5641 10.0547L23.5641 13.0547C23.1328 13.4859 22.4906 13.6125 21.9281 13.3781C21.3656 13.1437 21 12.6047 21 12V10.5H19.5C19.0266 10.5 18.5812 10.7203 18.3 11.1L16.7812 13.125L14.9062 10.6265L15.9 9.29998C16.7484 8.16561 18.0844 7.49998 19.5 7.49998H21V5.99998C21 5.3953 21.3656 4.84686 21.9281 4.61248ZM10.2188 16.875L12.0938 19.3734L11.1 20.7C10.2516 21.8344 8.91563 22.5 7.5 22.5H4.5C3.67031 22.5 3 21.8297 3 21C3 20.1703 3.67031 19.5 4.5 19.5H7.5C7.97344 19.5 8.41875 19.2797 8.7 18.9L10.2188 16.875ZM23.5594 25.0594C23.1281 25.4906 22.4859 25.6172 21.9234 25.3828C21.3609 25.1484 21 24.6047 21 24V22.5H19.5C18.0844 22.5 16.7484 21.8344 15.9 20.7L8.7 11.1C8.41875 10.7203 7.97344 10.5 7.5 10.5H4.5C3.67031 10.5 3 9.82967 3 8.99998C3 8.1703 3.67031 7.49998 4.5 7.49998H7.5C8.91563 7.49998 10.2516 8.16561 11.1 9.29998L18.3 18.9C18.5812 19.2797 19.0266 19.5 19.5 19.5H21V18C21 17.3953 21.3656 16.8469 21.9281 16.6125C22.4906 16.3781 23.1328 16.5094 23.5641 16.9359L26.5641 19.9359C26.8453 20.2172 27.0047 20.5969 27.0047 20.9953C27.0047 21.3937 26.8453 21.7734 26.5641 22.0547L23.5641 25.0547L23.5594 25.0594Z" />
+              </svg>
+            </button>
+            <button class="prev">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.659 14.8437C10.0415 14.4507 10.0415 13.5493 10.659 13.1563L20.6298 6.81135C21.2955 6.38771 22.1666 6.86592 22.1666 7.65501V20.345C22.1666 21.1341 21.2955 21.6123 20.6298 21.1887L10.659 14.8437Z"
+                  fill="white" />
+                <rect
+                  width="2.33333"
+                  height="16.3333"
+                  rx="1"
+                  transform="matrix(-1 0 0 1 8.16663 5.83331)"
+                  fill="white" />
+              </svg>
+            </button>
+            <button class="control">
+              <svg
+                class="control_play_btn active"
+                width="23"
+                height="27"
+                viewBox="0 0 23 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.8604 11.4898C23.1637 12.2651 23.1637 14.1523 21.8604 14.9276L3.02247 26.1332C1.68931 26.9263 -1.20116e-06 25.9655 -1.13335e-06 24.4143L-1.53723e-07 2.00305C-8.59184e-08 0.451851 1.68931 -0.508857 3.02247 0.284169L21.8604 11.4898Z"
+                  fill="black" />
+              </svg>
+              <svg
+                class="control_pause_btn"
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="4" width="8" height="26" rx="2" fill="black" />
+                <rect x="20" y="4" width="8" height="26" rx="2" fill="black" />
+              </svg>
+            </button>
+            <button class="next">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.341 14.8437C17.9585 14.4507 17.9585 13.5493 17.341 13.1563L7.37025 6.81135C6.70452 6.38771 5.83337 6.86592 5.83337 7.65501V20.345C5.83337 21.1341 6.70452 21.6123 7.37025 21.1887L17.341 14.8437Z"
+                  fill="white" />
+                <rect
+                  x="19.8334"
+                  y="5.83331"
+                  width="2.33334"
+                  height="16.3333"
+                  rx="1"
+                  fill="white" />
+              </svg>
+            </button>
+            <button class="repeat">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.56255 23.75L9.62505 24.8125C9.87505 25.0625 9.99505 25.3542 9.98505 25.6875C9.97505 26.0208 9.85505 26.3125 9.62505 26.5625C9.37505 26.8125 9.07838 26.9429 8.73505 26.9538C8.39171 26.9646 8.09463 26.8446 7.8438 26.5938L4.62505 23.375C4.50005 23.25 4.4113 23.1146 4.3588 22.9688C4.3063 22.8229 4.28088 22.6667 4.28255 22.5C4.28421 22.3333 4.31046 22.1771 4.3613 22.0313C4.41213 21.8854 4.50046 21.75 4.6263 21.625L7.84505 18.4063C8.09505 18.1563 8.39213 18.0367 8.7363 18.0475C9.08046 18.0583 9.37713 18.1883 9.6263 18.4375C9.85546 18.6875 9.97546 18.9792 9.9863 19.3125C9.99713 19.6458 9.87713 19.9375 9.6263 20.1875L8.5638 21.25H21.25V17.5C21.25 17.1458 21.37 16.8492 21.61 16.61C21.85 16.3708 22.1467 16.2508 22.5 16.25C22.8534 16.2492 23.1505 16.3692 23.3913 16.61C23.6321 16.8508 23.7517 17.1475 23.75 17.5V21.25C23.75 21.9375 23.5055 22.5263 23.0163 23.0163C22.5271 23.5063 21.9384 23.7508 21.25 23.75H8.56255ZM21.4375 8.75002H8.75005V12.5C8.75005 12.8542 8.63005 13.1513 8.39005 13.3913C8.15005 13.6313 7.85338 13.7508 7.50005 13.75C7.14671 13.7492 6.85005 13.6292 6.61005 13.39C6.37005 13.1508 6.25005 12.8542 6.25005 12.5V8.75002C6.25005 8.06252 6.49505 7.47418 6.98505 6.98501C7.47505 6.49585 8.06338 6.25085 8.75005 6.25001H21.4375L20.375 5.18752C20.125 4.93751 20.005 4.64585 20.015 4.31251C20.025 3.97918 20.145 3.68751 20.375 3.43751C20.625 3.18751 20.9217 3.05751 21.265 3.04751C21.6084 3.03751 21.9055 3.1571 22.1563 3.40626L25.375 6.62502C25.5 6.75002 25.5888 6.88543 25.6413 7.03126C25.6938 7.1771 25.7196 7.33335 25.7188 7.50001C25.718 7.66668 25.6921 7.82293 25.6413 7.96876C25.5905 8.1146 25.5017 8.25001 25.375 8.37501L22.1563 11.5938C21.9063 11.8438 21.6096 11.9638 21.2663 11.9538C20.923 11.9438 20.6259 11.8133 20.375 11.5625C20.1459 11.3125 20.0259 11.0208 20.015 10.6875C20.0042 10.3542 20.1242 10.0625 20.375 9.81252L21.4375 8.75002Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
