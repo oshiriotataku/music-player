@@ -489,11 +489,18 @@ body {
 @media (max-width: 470px) {
   body {
     padding: 0;
+    background: #000;
   }
+  .player_controls {
+  width: 100%;
+}
 }
 
 @media (max-height: 900px) {
   .player {
     padding: 20px 30px 40px;
+  }
+  body{
+    background: #000;
   }
 }
