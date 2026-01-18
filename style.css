@@ -20,11 +20,12 @@ body {
   height: 100svh;
   display: flex;
   align-items: center;
+  padding: 15px;
 }
 
 .container {
   max-width: 440px;
-  max-height: 700px;
+  max-height: 900px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -134,6 +135,7 @@ body {
 
 .list_song-info {
   display: flex;
+  align-items: center;
   gap: 10px;
   max-width: 360px;
   width: 100%;
@@ -149,7 +151,6 @@ body {
 .list_song-info_text {
   display: flex;
   flex-direction: column;
-  margin-top: 17px;
 }
 
 .list_song-info_title {
@@ -223,6 +224,7 @@ body {
   max-width: 330px;
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 10px;
   z-index: 3;
   padding-right: 20px;
@@ -237,7 +239,6 @@ body {
 .miniplayer_info_text {
   display: flex;
   flex-direction: column;
-  margin-top: 17px;
 }
 
 .miniplayer_info_title {
@@ -295,9 +296,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 700px;
+  bottom: -900px;
   left: 0;
-  padding: 20px 30px 40px;
+  padding: 20px 30px 100px;
   background: #000;
   z-index: 3;
   transition: 0.3s;
@@ -483,4 +484,16 @@ body {
 
 .repeat.active svg path {
   fill: #25a45c;
+}
+
+@media (max-width: 470px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media (max-height: 900px) {
+  .player {
+    padding: 20px 30px 40px;
+  }
 }

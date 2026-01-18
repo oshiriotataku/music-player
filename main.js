@@ -275,10 +275,10 @@ repeat.addEventListener("click", () => {
 
 // player open/close
 miniplayerInfo.addEventListener("click", () => {
-  player.style.top = "0";
+  player.style.bottom = "0";
 });
 playerHeaderBtn.addEventListener("click", () => {
-  player.style.top = "700px";
+  player.style.bottom = "-900px";
 });
 
 // time and slider
